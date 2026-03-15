@@ -1,0 +1,9 @@
+# Changelog
+
+## 0.1.0 (2026-03-15)
+
+- Initial release
+- Register shutdown hooks with priority ordering
+- Parallel shutdown within same priority level
+- Configurable timeout per hook and globally
+- Signal handling (SIGTERM, SIGINT)
