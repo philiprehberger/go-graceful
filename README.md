@@ -101,6 +101,13 @@ s.Trigger()
 | `PriorityNormal` | Priority 50 — default |
 | `PriorityLast` | Priority 100 — runs last |
 
+## Development
+
+```bash
+go test ./...
+go vet ./...
+```
+
 ## License
 
 MIT
