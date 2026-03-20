@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0
+
+- Expand README with server shutdown and hook timeout examples
+
 ## 0.1.2
 
 - Add Development section to README

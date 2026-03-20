@@ -84,6 +84,45 @@ s.Trigger()
 <-s.Done()
 ```
 
+### Server Shutdown
+
+```go
+import graceful "github.com/philiprehberger/go-graceful"
+
+s := graceful.New(graceful.WithTimeout(30 * time.Second))
+
+srv := &http.Server{Addr: ":8080"}
+go srv.ListenAndServe()
+
+s.Register("http-server", graceful.Critical, func(ctx context.Context) error {
+    return srv.Shutdown(ctx)
+})
+
+s.Register("db-pool", graceful.Normal, func(ctx context.Context) error {
+    return db.Close()
+})
+
+s.Register("flush-logs", graceful.Low, func(ctx context.Context) error {
+    return logger.Sync()
+})
+
+s.Wait() // blocks until signal received, then runs hooks in priority order
+```
+
+### Hook Timeouts
+
+```go
+import graceful "github.com/philiprehberger/go-graceful"
+
+s := graceful.New()
+
+// Individual hook with its own timeout (independent of global timeout)
+s.RegisterTimeout("slow-drain", graceful.Normal, 10*time.Second, func(ctx context.Context) error {
+    // ctx expires after 10s regardless of global timeout
+    return drainConnections(ctx)
+})
+```
+
 ## API
 
 | Function / Type | Description |
