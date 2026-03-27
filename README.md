@@ -1,6 +1,6 @@
 # go-graceful
 
-[![CI](https://github.com/philiprehberger/go-graceful/actions/workflows/ci.yml/badge.svg)](https://github.com/philiprehberger/go-graceful/actions/workflows/ci.yml) [![Go Reference](https://pkg.go.dev/badge/github.com/philiprehberger/go-graceful.svg)](https://pkg.go.dev/github.com/philiprehberger/go-graceful) [![License](https://img.shields.io/github/license/philiprehberger/go-graceful)](LICENSE)
+[![CI](https://github.com/philiprehberger/go-graceful/actions/workflows/ci.yml/badge.svg)](https://github.com/philiprehberger/go-graceful/actions/workflows/ci.yml) [![Go Reference](https://pkg.go.dev/badge/github.com/philiprehberger/go-graceful.svg)](https://pkg.go.dev/github.com/philiprehberger/go-graceful) [![License](https://img.shields.io/github/license/philiprehberger/go-graceful)](LICENSE) [![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
 
 Graceful shutdown orchestrator for Go services. Register hooks with priorities, drain in order
 
